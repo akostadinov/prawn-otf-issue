@@ -1,12 +1,6 @@
 require 'prawn'
 
 Prawn::Document.generate('implicit.pdf') do
-  font_families.update({
-    "Liberation Sans" => {
-      normal: "/usr/share/fonts/overpass/overpass-regular.otf",
-      bold: "/usr/share/fonts/overpass/overpass-regular.otf",
-    }
-  })
-  font "Liberation Sans"
+  font File.expand_path("overpass/overpass-regular.otf", File.dirname(__FILE__))
   text 'Hello World'
 end
